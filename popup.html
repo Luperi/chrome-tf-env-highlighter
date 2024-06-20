@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheFork - Environment highlighter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>TheFork - Environment highlighter</h1>
+    </div>
+    <div class="container">
+        <fieldset>
+            <legend>Highlight apps on test env</legend>
+
+            <div>
+                <input type="color" id="highlight-color-test" name="highlight-color-test" value="#FFA500" />
+                <label for="highlight-color-test">Border color</label>
+            </div>
+          
+            <div>
+              <input type="checkbox" id="highlight-enabled-test" name="highlight-enabled-test" checked />
+              <label for="highlight-enabled-test">Enabled</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Highlight apps on production</legend>
+            <div>
+                <input type="color" id="highlight-color-prod" name="highlight-color-prod" value="#FFA500" />
+                <label for="highlight-color-prod">Border color</label>
+            </div>
+          
+            <div>
+              <input type="checkbox" id="highlight-enabled-prod" name="highlight-enabled-prod" checked />
+              <label for="highlight-enabled-prod">Enabled</label>
+            </div>
+          </fieldset>
+          <fieldset>
+          <legend>Available on</legend>
+            <div>
+              <input type="checkbox" id="highlight-available-wng" name="highlight-available-wng" checked />
+              <label for="highlight-available-wng">WNG</label>
+            </div>
+            <div>
+                <input type="checkbox" id="highlight-available-tfm" name="highlight-available-tfm" checked />
+                <label for="highlight-available-tfm">TFM</label>
+              </div>
+            <div>
+                <input type="checkbox" id="highlight-available-rclp" name="highlight-available-rclp" checked />
+                <label for="highlight-available-rclp">RCLP</label>
+              </div>
+              <div>
+                <input type="checkbox" id="highlight-available-widget" name="highlight-available-widget" checked />
+                <label for="highlight-available-widget">Widget</label>
+              </div>
+          </fieldset>
+          <div id="status"></div>
+          <button id="save">Save</button>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{
+  "name": "TheFork - Environment highlighter",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "Highlight TheFork's frontends based on their environment.",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+   {
+     "matches": [
+      "https://*.thefork.com/*",
+      "https://*.thefork.fr/*",
+      "https://*.thefork.es/*",
+      "https://*.thefork.it/*",
+      "https://*.thefork.ch/*",
+      "https://*.thefork.be/*",
+      "https://*.thefork.se/*",
+      "https://*.thefork.nl/*",
+      "https://*.thefork.dk/*",
+      "https://*.thefork.pt/*",
+      "https://*.thefork.cl/*",
+      "https://*.thefork.at/*",
+      "https://*.thefork.fi/*",
+      "https://*.thefork.no/*",
+      "https://*.thefork.io/*",
+      "https://*.thefork.tech/*",
+      "https://*.restaurant-information.com/*"],
+     "js": ["content-script.js"]
+   }
+ ],
+  "background": {
+    "service_worker": "sw.js"
+  },
+  "permissions": ["scripting", "webNavigation", "storage"],
+  "action": {
+    "default_popup": "popup.html"
+  }
+  
+}
