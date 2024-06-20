@@ -1,6 +1,7 @@
 DEFAULT_OPTIONS = {
     highlightColors: {
-        test: '#FFA500',
+        staging: '#FFA500',
+        uat: '#FFFF33',
         prod: '#FF0000',
     },
     highlightEnabled: {

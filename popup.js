@@ -1,6 +1,7 @@
 DEFAULT_OPTIONS = {
   highlightColors: {
-      test: '#FFA500',
+      staging: '#FFA500',
+      uat: '#FFFF33',
       prod: '#FF0000',
   },
   highlightEnabled: {
@@ -16,7 +17,8 @@ DEFAULT_OPTIONS = {
 };
 
 const saveOptions = () => {
-  const highlightColorTest = getValue('highlight-color-test');
+  const highlightColorStaging = getValue('highlight-color-staging');
+  const highlightColorUAT = getValue('highlight-color-uat');
   const highlightEnabledTest = getCheckedValue('highlight-enabled-test');
   const highlightColorProd = getValue('highlight-color-prod');
   const highlightEnabledProd = getCheckedValue('highlight-enabled-prod');
@@ -28,7 +30,8 @@ const saveOptions = () => {
   chrome.storage.sync.set(
     {
       highlightColors: {
-        test: highlightColorTest,
+        staging: highlightColorStaging,
+        uat: highlightColorUAT,
         prod: highlightColorProd,
       },
       highlightEnabled: {
@@ -58,7 +61,8 @@ const restoreOptions = () => {
   chrome.storage.sync.get(
     DEFAULT_OPTIONS,
     (items) => {
-      setValue('highlight-color-test', items.highlightColors.test);
+      setValue('highlight-color-staging', items.highlightColors.staging);
+      setValue('highlight-color-uat', items.highlightColors.uat);
       setCheckedValue('highlight-enabled-test', items.highlightEnabled.test);
       setValue('highlight-color-prod', items.highlightColors.prod);
       setCheckedValue('highlight-enabled-prod', items.highlightEnabled.prod);

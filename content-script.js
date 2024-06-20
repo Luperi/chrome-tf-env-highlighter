@@ -1,5 +1,6 @@
 const regexPatterns = {
-  testEnv: /uat|staging|preprod/i,
+  staging: /staging|preprod/i,
+  uat: /uat/i,
   tfm: /manager/i,
   rclp: /restaurant-information/i,
   widget: /widget/i,
@@ -13,7 +14,8 @@ const options = {
 
 chrome.storage.sync.get().then((items) => {
   options.highlightColors = {
-    test: items.highlightColors.test,
+    staging: items.highlightColors.staging,
+    uat: items.highlightColors.uat,
     prod: items.highlightColors.prod,
   };
   options.highlightEnabled = {
@@ -31,16 +33,24 @@ chrome.storage.sync.get().then((items) => {
     (isRclp() && options.availableOn.rclp) ||
     (isWng() && options.availableOn.wng)) {
     if (isTestEnv() && options.highlightEnabled.test) {
-    createOverlay();
+      createOverlay();
     } else if (!isTestEnv() && options.highlightEnabled.prod) {
-    createOverlay();
+      createOverlay();
     }
   }
 
 });
 
 function isTestEnv() {
-  return regexPatterns.testEnv.test(window.location.hostname);
+  return isStaging() || isUat();
+}
+
+function isStaging() {
+  return regexPatterns.staging.test(window.location.hostname);
+}
+
+function isUat() {
+  return regexPatterns.uat.test(window.location.hostname);
 }
 
 function isTfm() {
@@ -68,6 +78,16 @@ function createOverlay() {
   overlay.style.width = '100%';
   overlay.style.height = '100%';
   overlay.style.zIndex = "9999999999999999";
-  overlay.style.borderColor = isTestEnv() ? options.highlightColors.test : options.highlightColors.prod;
+  var borderColor;
+  if (isTestEnv()) {
+    if (isStaging()) {
+      borderColor = options.highlightColors.staging;
+    } else if (isUat()) {
+      borderColor = options.highlightColors.uat;
+    }
+  } else {
+    borderColor = options.highlightColors.prod;
+  }
+  overlay.style.borderColor = borderColor;
   document.body.appendChild(overlay);
 }
