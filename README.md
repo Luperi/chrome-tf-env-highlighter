@@ -14,9 +14,13 @@ It's also possible to choose on which frontend you might want to enable the exte
 
 > :warning: When settings are updated, you need to refresh tabs to see the changes.
 
+## Setup
+
+The extension is available only to users in Tripadvisor organization. Head over the [Chrome Web Store](https://chromewebstore.google.com/detail/thefork-environment-highl/nmhdhoehpomcffkidggcnelbbkbljofb?hl=en) to install it.
+
 ## Manual setup
 
-Since the extension is not yet published to the Private Chrome Web Store. Follow these steps (from the official [documentation](https://cloud.google.com/blog/products/chrome-enterprise/publishing-extensions-for-the-enterprise?hl=en)) :
+If you do want to install an unpackaged version, follow these steps (from the official [documentation](https://cloud.google.com/blog/products/chrome-enterprise/publishing-extensions-for-the-enterprise?hl=en)) :
 1. Signing into Chrome and browsing to chrome://extensions/  (Make sure you have developer mode on; it’s located at the top right) 
 2. Clicking “load unpacked” and browse to your extension folder
 3. Running the extension and ensuring that it functions correctly
