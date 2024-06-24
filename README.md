@@ -23,4 +23,4 @@ Since the extension is not yet published to the Private Chrome Web Store. Follow
 
 ## Implementation Notes
 
-Please note this is the result of a 60 minutes, it's not perfect !
+Please note this is the result of a 60 minutes side-project, it's not perfect ! Feel free to report any issue you might have or enhancements you would like to see.
