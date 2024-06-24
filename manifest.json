@@ -25,7 +25,6 @@
       "https://*.thefork.at/*",
       "https://*.thefork.fi/*",
       "https://*.thefork.no/*",
-      "https://*.thefork.io/*",
       "https://*.thefork.tech/*",
       "https://*.restaurant-information.com/*"],
      "js": ["content-script.js"]
