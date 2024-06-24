@@ -1,6 +1,6 @@
 {
   "name": "TheFork - Environment highlighter",
-  "version": "1.0",
+  "version": "1.0.1",
   "manifest_version": 3,
   "description": "Highlight TheFork's frontends based on their environment.",
   "icons": {

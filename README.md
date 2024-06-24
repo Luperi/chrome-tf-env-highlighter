@@ -1,10 +1,10 @@
 # TheFork - Environment highlighter
 
-This Chrome extension allows you to add a visual overlay to common TheFork's frontends depending the environement you're currently browsing.
+This Chrome extension allows you to add a visual overlay to common TheFork's frontends depending the environment you're currently browsing.
 
 ## Overview
 
-Once this extension is installed, clicking this extension's action icon will open an extension page with default settings provided.
+Once this extension is installed, clicking the extension's action icon will open an extension pop-up with default settings provided.
 
 You can save settings per environment (`UATs` and `staging` or `production`).
 
